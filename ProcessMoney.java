@@ -16,7 +16,7 @@ public class ProcessMoney
    */
   public void setTicketPrice( int amount )
   {
-    // Fill in code for the method
+    theTicketPrice = amount;
   }
 
   /**
@@ -25,7 +25,7 @@ public class ProcessMoney
    */
   public int getTicketPrice()
   {
-    // Fill in code for the method
+    return theTicketPrice;
   }
 
   /**
@@ -35,7 +35,7 @@ public class ProcessMoney
    */
   public void add( int coin )
   {
-    // Fill in code for the method
+    theCredit += coin;
   } 
 
   /**
@@ -45,7 +45,11 @@ public class ProcessMoney
    */
   public boolean enough()
   {
-    // Fill in code for the method
+    if (theCredit >= theTicketPrice) {
+        return true;
+    } else {
+        return false;
+    }
   }
 
   /**
@@ -55,7 +59,7 @@ public class ProcessMoney
    */
   public int getPaidSoFar()
   {
-    // Fill in code for the method
+        return theCredit;
   }
 
   /**
@@ -65,7 +69,8 @@ public class ProcessMoney
    */
   public void cancel()
   {
-    // Fill in code for the method
+      //the other bit I dont get rn
+      theCredit = 0;
   }
 
   /**
@@ -75,7 +80,9 @@ public class ProcessMoney
    */
   public void bought()
   {
-    // Fill in code for the method
+      //shouldnt this just be the ticket amount?
+      theMoneyInTheMachine += theCredit;
+      theCredit = 0;
   }
 
   /**
@@ -85,7 +92,7 @@ public class ProcessMoney
    */
   public int moneyInMachine()
   {
-    // Fill in code for the method
+    return theMoneyInTheMachine;
   }
 
   // This method is not required for 5.1
